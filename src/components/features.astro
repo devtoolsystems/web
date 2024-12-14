@@ -1,0 +1,68 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Desarrollo web",
+    description:
+      "creamos un sitio web atractivo para tus clientes digitales",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "Marketing digital",
+    description:
+      "Tenemos planes de marketing digital que atreran posibles clientes",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Chatbot de whatssapp",
+    description:
+      "Te creamos un chatbot automatizado para un servicio al cliente mas atento",
+    icon: "bx:bxs-data",
+  },
+  // {
+  //   title: "Broad Integration",
+  //   description:
+  //     "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
+  //   icon: "bx:bxs-bot",
+  // },
+  // {
+  //   title: "SEO Enabled",
+  //   description:
+  //     "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+  //   icon: "bx:bxs-file-find",
+  // },
+  // {
+  //   title: "Community",
+  //   description:
+  //     "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+  //   icon: "bx:bxs-user",
+  // },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Todo lo que necesitas para tu negocio digital
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Tenemos una serie de servicios que haran que tu negocio alcance el siguiente nivel
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
