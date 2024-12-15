@@ -8,7 +8,7 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
  * this constant is used when we deploy de page on github and we need to add the initial path
  * of the domain of the repo
  */
-export const prefixPath = ''
+export const prefixPath = 'web'
 
 const menuitems = [
   // {
@@ -27,11 +27,11 @@ const menuitems = [
   // },
   {
     title: "Inicio",
-    path: `${prefixPath && prefixPath}/`,
+    path:  !!prefixPath ? '/web/' : '/',
   },
   {
     title: "Servicios",
-    path: `${prefixPath && prefixPath}/services`,
+    path: !!prefixPath ? '/web/services' : '/services',
   },
   // {
   //   title: "Pricing",
@@ -39,7 +39,7 @@ const menuitems = [
   // },
   {
     title: "Sobre nosotros",
-    path: `${prefixPath && prefixPath}/about`,
+    path: !!prefixPath ? '/web/about' : '/about' ,
   },
   // {
   //   title: "Portafolio",
@@ -47,11 +47,11 @@ const menuitems = [
   // },
   {
     title: "Portafolio",
-    path: `${prefixPath && prefixPath}/portfolio`,
+    path: !!prefixPath ? '/web/portfolio' : '/portfolio',
   },
   {
     title: "Contacto",
-    path: `${prefixPath && prefixPath}/contact`,
+    path: !!prefixPath ? '/web/contact' : '/contact',
   },
   // {
   //   title: "Pro Version",
@@ -65,7 +65,7 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg">
+        <a href={!!prefixPath ? '/web/' : '/'} class="text-lg">
           <!-- <span class="font-bold text-slate-800"> Astro </span> -->
           <span class="font-bold text-slate-800"> devtool </span>
           <span class="text-slate-500"> systems </span>
