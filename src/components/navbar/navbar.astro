@@ -3,12 +3,22 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { languageList } from "i18n/ui";
+import { useTranslations } from "i18n/utils";
 
 /**
  * this constant is used when we deploy de page on github and we need to add the initial path
  * of the domain of the repo
  */
 export const prefixPath = 'web'
+
+const currentLang = Astro.currentLocale || 'es'
+
+const translateLabels = useTranslations(currentLang as keyof typeof languageList)
+console.log('currentLang:', currentLang)
+console.log('getRelativeLocaleUrl(currentLang, "/web/es"):', getRelativeLocaleUrl(currentLang, '/web/es'))
+console.log('getRelativeLocaleUrl(currentLang):', getRelativeLocaleUrl(currentLang))
 
 const menuitems = [
   // {
@@ -26,20 +36,20 @@ const menuitems = [
   //   path: "/pricing",
   // },
   {
-    title: "Inicio",
-    path:  !!prefixPath ? '/web/' : '/',
+    title: translateLabels("nav.home"),
+    path:  !!prefixPath ? `${getRelativeLocaleUrl(currentLang)}`  : '/',
   },
   {
     title: "Servicios",
-    path: !!prefixPath ? '/web/services' : '/services',
+    path: !!prefixPath ?  `${getRelativeLocaleUrl(currentLang, '/services')}` : '/services',
   },
   // {
   //   title: "Pricing",
   //   path: "/Pricing",
   // },
   {
-    title: "Sobre nosotros",
-    path: !!prefixPath ? '/web/about' : '/about' ,
+    title: translateLabels("nav.about"),
+    path: !!prefixPath ? `${getRelativeLocaleUrl(currentLang, '/about')}` : '/about' ,
   },
   // {
   //   title: "Portafolio",
@@ -47,11 +57,11 @@ const menuitems = [
   // },
   {
     title: "Portafolio",
-    path: !!prefixPath ? '/web/portfolio' : '/portfolio',
+    path: !!prefixPath ? `${getRelativeLocaleUrl(currentLang, '/portfolio')}` : '/portfolio',
   },
   {
     title: "Contacto",
-    path: !!prefixPath ? '/web/contact' : '/contact',
+    path: !!prefixPath ? `${getRelativeLocaleUrl(currentLang, '/contact')}`  : '/contact',
   },
   // {
   //   title: "Pro Version",
@@ -59,6 +69,8 @@ const menuitems = [
   //   path: "https://astroship-pro.web3templates.com/",
   // },
 ];
+
+
 ---
 
 <Container>
@@ -119,6 +131,17 @@ const menuitems = [
                 )}
               </>
             ))
+          }
+           {
+            Object.entries(languageList).map(
+              ([key, label]: [string, string]) => {
+                return (
+                  <li>
+                    <a href={`/web/${key}`}>{label}</a>
+                  </li>
+                );
+              }
+            )
           }
         </ul>
         <!-- <div class="lg:hidden flex items-center mt-3 gap-4">
