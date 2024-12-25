@@ -23,6 +23,9 @@ export const labels = {
         "feature.two.description": "Tenemos planes de marketing digital que atreran posibles clientes",
         "feature.three.title": "Chatbot de whatssapp",
         "feature.three.description": "Te creamos un chatbot automatizado para un servicio al cliente mas atento",
+        "cta.title": "Un paso mas serca para tu negocio en linea",
+        "cta.description": "Atrae a nuevos clientes para tu negocio",
+        "cta.link.text": "Inicia ya",
     },
     en: {
         "nav.home": "Home",
@@ -43,5 +46,8 @@ export const labels = {
         "feature.two.description": "We have digital marketing plans that attract potential customers.",
         "feature.three.title": "whatsapp chatbot",
         "feature.three.description": "We create an automated chatbot for a more attentive customer service",
+        "cta.title": "One step closer to your online business",
+        "cta.description": "Attract new customers to your business",
+        "cta.link.text": "Start now",
     },
 };
