@@ -26,6 +26,8 @@ export const labels = {
         "cta.title": "Un paso mas serca para tu negocio en linea",
         "cta.description": "Atrae a nuevos clientes para tu negocio",
         "cta.link.text": "Inicia ya",
+        "footer.Copyright.text": "Todos los derechos reservados",
+        "footer.Copyright.link.text": "Desarrollado por",
     },
     en: {
         "nav.home": "Home",
@@ -49,5 +51,7 @@ export const labels = {
         "cta.title": "One step closer to your online business",
         "cta.description": "Attract new customers to your business",
         "cta.link.text": "Start now",
+        "footer.Copyright.text": "All rights reserved",
+        "footer.Copyright.link.text": "Developed by",
     },
 };
