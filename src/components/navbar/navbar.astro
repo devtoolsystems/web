@@ -40,7 +40,7 @@ const menuitems = [
     path:  !!prefixPath ? `${getRelativeLocaleUrl(currentLang)}`  : '/',
   },
   {
-    title: "Servicios",
+    title: translateLabels("nav.services"),
     path: !!prefixPath ?  `${getRelativeLocaleUrl(currentLang, '/services')}` : '/services',
   },
   // {
@@ -56,11 +56,11 @@ const menuitems = [
   //   path: "/blog",
   // },
   {
-    title: "Portafolio",
+    title: translateLabels("nav.portfolio"),
     path: !!prefixPath ? `${getRelativeLocaleUrl(currentLang, '/portfolio')}` : '/portfolio',
   },
   {
-    title: "Contacto",
+    title:  translateLabels("nav.contact"),
     path: !!prefixPath ? `${getRelativeLocaleUrl(currentLang, '/contact')}`  : '/contact',
   },
   // {

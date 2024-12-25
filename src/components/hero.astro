@@ -4,7 +4,11 @@ import heroImage from "assets/hero.png";
 import heroPic from "assets/66490.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
+import { useTranslations } from "i18n/utils";
+import type { languageList } from "i18n/ui";
 
+const currentLang = Astro.currentLocale || 'es'
+const translateLabels = useTranslations(currentLang as keyof typeof languageList)
 ---
 
 <main
@@ -31,13 +35,13 @@ import { Icon } from "astro-icon/components";
     <h1
       class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
       <!-- Marketing website done with Astro -->
-       Desarrollo web
+       {translateLabels("hero.title")}
     </h1>
     <p class="text-lg mt-4 text-slate-600 max-w-xl">
       <!-- Astroship is a starter template for startups, marketing websites & landing
       pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly
       create any website with this starter. -->
-      Un socio tecnologico que busca que un mejor futuro para tu negocio.
+      {translateLabels("hero.description")}
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <!-- <Link
