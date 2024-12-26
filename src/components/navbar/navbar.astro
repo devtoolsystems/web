@@ -20,6 +20,9 @@ console.log('currentLang:', currentLang)
 console.log('getRelativeLocaleUrl(currentLang, "/web/es"):', getRelativeLocaleUrl(currentLang, '/web/es'))
 console.log('getRelativeLocaleUrl(currentLang):', getRelativeLocaleUrl(currentLang))
 
+const currentPath = Astro.url.pathname;
+console.log('currentPath:',currentPath);
+
 const menuitems = [
   // {
   //   title: "Features",

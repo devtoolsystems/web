@@ -7,99 +7,29 @@ import { Icon } from "astro-icon/components";
 import PricingCard from "@components/pricing.astro";
 import { prefixPath } from "@components/navbar/navbar.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations } from "i18n/utils";
+import type { languageList } from "i18n/ui";
+import {servicesPageHelper} from "../../helpers/servicesPageHelper";
+const currentLang = Astro.currentLocale || "es";
 
-const currentLang = Astro.currentLocale || 'es'
+const translateLabels = useTranslations(
+  currentLang as keyof typeof languageList,
+);
 
-const pricing = [
-  {
-    name: "Desarrollo web",
-    //price: "Free",
-    //popular: false,
-    features: [
-      "Desarrollo a medida",
-      "Adaptado a tus necesidades",
-      "Diferencia de la competencia",
-    //   "Astro Sub domain",
-    //   "Basic Integrations",
-    //   "Community Support",
-    ],
-    button: {
-      text: "Inicia",
-      link: "/",
-    },
-  },
-  {
-    name: "Marketing digital",
-    // price: {
-    //   monthly: "$19",
-    //   annual: "$16",
-    //   discount: "10%",
-    //   original: "$24",
-    // },
-    //popular: true,
-    features: [
-      "Analisis de datos",
-      "Embudo de ventas",
-    //   "20 Custom domains",
-    //   "Unlimited Collaborators",
-    //   "Advanced Integrations",
-    //   "Priority Support",
-    ],
-    button: {
-      text: "Inicia",
-      link: "#",
-    },
-  },
-  {
-    name: "Chatbots",
-    //price: "Custom",
-    popular: false,
-    features: [
-      "Maten informado a tus clientes",
-      "Fideliza a los nuevos clientes",
-      "Informa de promociones directamente",
-      "Automatiza tareas recurrentes",
-    //   "Dedicated Account Manager",
-    //   "24/7 Phone Support",
-    ],
-    button: {
-      text: "Contact us",
-      link: `${getRelativeLocaleUrl(currentLang, '/contact')}`,
-    },
-  },
-//   {
-//     name: "Enterprise",
-//     price: "Custom",
-//     popular: false,
-//     features: [
-//       "All Pro Features",
-//       "Unlimited Custom domains",
-//       "99.99% Uptime SLA",
-//       "SAML & SSO Integration",
-//       "Dedicated Account Manager",
-//       "24/7 Phone Support",
-//     ],
-//     button: {
-//       text: "Contact us",
-//       link: "/contact",
-//     },
-//   },
-];
-
+const pricing = servicesPageHelper({currentLang:currentLang})
 ---
 
-<Layout title="Pricing">
-    <Container>
-      <Sectionhead>
-        <Fragment slot="title">Nuestros servicios</Fragment>
-        <Fragment slot="desc">
-          Enfocados en atraer mas clientes a tu engocio
-        </Fragment>
-      </Sectionhead>
-  
-      <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
-        {pricing.map((item) => <PricingCard plan={item} />)}
-      </div>
-    </Container>
-  </Layout>
-  
+<Layout title="Servicios">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">{translateLabels("services.title")} </Fragment>
+      <Fragment slot="desc">
+        {translateLabels("services.description")}
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <PricingCard plan={item} />)}
+    </div>
+  </Container>
+</Layout>
