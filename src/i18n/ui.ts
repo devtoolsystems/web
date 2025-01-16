@@ -47,7 +47,10 @@ export const labels = {
         "services.three.features.two": "Fideliza a los nuevos clientes",
         "services.three.features.three": "Informa de promociones directamente",
         "services.three.button.text": "Contactanos",
-
+        "portfolio.title": "Nuestros servicios",
+        "portfolio.description": "Enfocados en atraer mas clientes a tu engocio",
+        "portfolio.card.viewMore": "Ver más",
+     
     },
     en: {
         "nav.home": "Home",
@@ -92,6 +95,8 @@ export const labels = {
         "services.three.features.two": "Build loyalty among new customers",
         "services.three.features.three": "Informs about promotions directly",
         "services.three.button.text": "Contact us",
-
+        "portfolio.title": "Our services",
+        "portfolio.description": "Focused on attracting more customers to your business.",
+        "portfolio.card.viewMore": "View more",       
     },
 };
