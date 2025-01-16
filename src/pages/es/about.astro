@@ -4,27 +4,35 @@ import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import { useTranslations } from "i18n/utils";
+import type { languageList } from "i18n/ui";
+import { servicesPageHelper } from "helpers/servicesPageHelper";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
 });
+
+const currentLang = Astro.currentLocale || "es";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof languageList,
+);
 ---
 
 <Layout title="About">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Sobre nosotros</Fragment>
-      <Fragment slot="desc">Somos un equipo apasionado.</Fragment>
+      <Fragment slot="title">{translateLabels("about.title")}</Fragment>
+      <Fragment slot="desc">{translateLabels("about.description")}</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Convirtiendo tus ideas en realidad
+        {translateLabels("about.slogan")}
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        Somos un equpo multidisiplinario, que trae diferentes experriencias
-        avilidades a los projectos lo que lo hace de calidad
+        {translateLabels("about.slogan.description")}
       </p>
     </div>
     <!-- <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">

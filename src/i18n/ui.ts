@@ -12,7 +12,10 @@ export const labels = {
         "nav.about": "Sobre nosotros",
         "nav.about.title": "Sobre nosotros",
         "home.title": "Bienvenidos a Programación en español",
-        "about.title": "Acerca de la comunidad",
+        "about.title": "Sobre nosotros",
+        "about.description": "Somos un equipo apasionado.",
+        "about.slogan": "Convirtiendo tus ideas en realidad",
+        "about.slogan.description": "Somos un equpo multidisiplinario que trae diferentes experiencias y habilidades con calidad a los proyectos ",
         "hero.title": "Desarrollo web",
         "hero.description": "El mejor socio tecnologico que busca que un mejor futuro para tu negocio.",
         "feature.title": "Todo lo que necesitas para tu negocio digital",
@@ -44,6 +47,7 @@ export const labels = {
         "services.three.features.two": "Fideliza a los nuevos clientes",
         "services.three.features.three": "Informa de promociones directamente",
         "services.three.button.text": "Contactanos",
+
     },
     en: {
         "nav.home": "Home",
@@ -53,7 +57,10 @@ export const labels = {
         "nav.about": "About",
         "nav.about.title": "About us",
         "home.title": "Welcome to Programación en español",
-        "about.title": "About our community",
+        "about.title": "About us",
+        "about.description": "We are a passionate team",
+        "about.slogan": " Turning your ideas into reality",
+        "about.slogan.description": "We are a multi-disciplinary team that brings different experiences and quality skills to quality projects.",
         "hero.title": "Web development",
         "hero.description": "The best technology partner looking for a better future for your business.",
         "feature.title": "Everything you need for your digital business",
@@ -85,5 +92,6 @@ export const labels = {
         "services.three.features.two": "Build loyalty among new customers",
         "services.three.features.three": "Informs about promotions directly",
         "services.three.button.text": "Contact us",
+
     },
 };
