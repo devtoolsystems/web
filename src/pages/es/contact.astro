@@ -4,37 +4,50 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import type { languageList } from "i18n/ui";
+import { useTranslations } from "i18n/utils";
+
+const currentLang = Astro.currentLocale || "es";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof languageList,
+);
 ---
 
 <Layout title="Contact">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Contacto</Fragment>
-      <Fragment slot="desc">Estamos aqui para ayudarte.</Fragment>
+      <Fragment slot="title">{translateLabels("contact.title")}</Fragment>
+      <Fragment slot="desc">{translateLabels("contact.description")}</Fragment>
     </Sectionhead>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
         <h2 class="font-medium text-2xl text-gray-800">
-          Contacto a DevtoolSystems
+          {translateLabels("contact.seccion.title")}
         </h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Tienes algo que decirnos? Estamos aqui para ayudarte, rellena el
-          formulario o envia un email o llama a nuestro numero de telefono.
+          {translateLabels("contact.seccion.text")}
         </p>
         <div class="mt-5">
+          <!--   <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
+            <span>1734 Sanfransico, CA 93063</span> 
+          </div> -->
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
-          <!--   <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>1734 Sanfransico, CA 93063</span> -->
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@astroshipstarter.com"
-              >email@email.com</a
+              href="mailto:devtoolsystemss@gmail.com"
+              >devtoolsystemss@gmail.com</a
             >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
+          </div>
+          <!--  <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
               href="tel:+50587132507">+50587132507</a
             >
+          </div> -->
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" />
+            <a target="_blank" href="http://wa.link/ff4rx0">WhatsApp</a>
           </div>
         </div>
       </div>
