@@ -7,6 +7,10 @@ import { Icon } from "astro-icon/components";
 import PricingCard from "@components/pricing.astro";
 import { useTranslations } from "i18n/utils";
 import type { languageList } from "i18n/ui";
+import coffePage from "../../assets/coffeePage.jpg";
+import covidPage from "../../assets/covidPage.jpg";
+import travelDivingPage from "../../assets/travelDivingPage.jpg";
+import { Picture } from "astro:assets";
 
 const currentLang = Astro.currentLocale || "es";
 
@@ -27,7 +31,7 @@ const pricing = [
       //   "Basic Integrations",
       //   "Community Support",
     ],
-    imgurl: "",
+    imgurl: coffePage,
     button: {
       text: "Inicia",
       link: "https://elegant-bhabha-8dbdf8.netlify.app/",
@@ -50,7 +54,7 @@ const pricing = [
       //   "Advanced Integrations",
       //   "Priority Support",
     ],
-    imgurl: "",
+    imgurl: covidPage,
     button: {
       text: "Inicia",
       link: "https://gallant-kalam-dd225f.netlify.app/",
@@ -68,7 +72,7 @@ const pricing = [
       //   "Dedicated Account Manager",
       //   "24/7 Phone Support",
     ],
-    imgurl: "",
+    imgurl: travelDivingPage,
     button: {
       text: "Contact us",
       link: "https://competent-austin-f96766.netlify.app/",
@@ -115,13 +119,20 @@ const pricing = [
                 href={item.button.link}
                 target="_blank"
                 class="relative block w-64 h-40 overflow-hidden rounded-lg shadow-lg transition-transform transform hover:scale-105">
-                <img
-                  src="https://via.placeholder.com/400"
-                  alt="Imagen de fondo"
+                <Picture
+                  src={item.imgurl}
+                  alt="Astronaut in the air"
+                  widths={[200, 400, 600]}
+                  sizes="(max-width: 800px) 100vw, 620px"
+                  loading="eager"
+                  format="avif"
                   class="absolute inset-0 object-cover w-full h-full transition-opacity duration-300 ease-in-out opacity-75"
                 />
                 <div class="relative flex items-center justify-center h-full bg-black bg-opacity-50">
-                  <span class="text-white text-lg font-semibold"> {translateLabels("portfolio.card.viewMore")}</span>
+                  <span class="text-white text-lg font-semibold">
+                    {" "}
+                    {translateLabels("portfolio.card.viewMore")}
+                  </span>
                 </div>
               </a>
             </>
