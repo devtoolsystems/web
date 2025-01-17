@@ -2,6 +2,7 @@
 import { useTranslations } from "i18n/utils";
 import Link from "./ui/link.astro";
 import type { languageList } from "i18n/ui";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const currentLang = Astro.currentLocale || "es";
 
@@ -19,6 +20,6 @@ const translateLabels = useTranslations(
     {translateLabels("cta.description")}
   </p>
   <div class="flex mt-5">
-    <Link href="#" style="inverted">{translateLabels("cta.link.text")}</Link>
+    <Link href={`${getRelativeLocaleUrl(currentLang, "/contact")}`} style="inverted">{translateLabels("cta.link.text")}</Link>
   </div>
 </div>
