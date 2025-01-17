@@ -1,0 +1,144 @@
+---
+import Contactform from "@components/contactform.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import PricingCard from "@components/pricing.astro";
+import { useTranslations } from "i18n/utils";
+import type { languageList } from "i18n/ui";
+import coffePage from "../../assets/coffeePage.jpg";
+import covidPage from "../../assets/covidPage.jpg";
+import travelDivingPage from "../../assets/travelDivingPage.jpg";
+import { Picture } from "astro:assets";
+
+const currentLang = Astro.currentLocale || "es";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof languageList,
+);
+
+const pricing = [
+  {
+    name: "Desarrollo web",
+    //price: "Free",
+    //popular: false,
+    features: [
+      "Desarrollo a medida",
+      "Adaptado a tus necesidades",
+      "Diferencia de la competencia",
+      //   "Astro Sub domain",
+      //   "Basic Integrations",
+      //   "Community Support",
+    ],
+    imgurl: coffePage,
+    button: {
+      text: "Inicia",
+      link: "https://elegant-bhabha-8dbdf8.netlify.app/",
+    },
+  },
+  {
+    name: "Marketing digital",
+    // price: {
+    //   monthly: "$19",
+    //   annual: "$16",
+    //   discount: "10%",
+    //   original: "$24",
+    // },
+    //popular: true,
+    features: [
+      "Analisis de datos",
+      "Embudo de ventas",
+      //   "20 Custom domains",
+      //   "Unlimited Collaborators",
+      //   "Advanced Integrations",
+      //   "Priority Support",
+    ],
+    imgurl: covidPage,
+    button: {
+      text: "Inicia",
+      link: "https://gallant-kalam-dd225f.netlify.app/",
+    },
+  },
+  {
+    name: "Chatbots",
+    //price: "Custom",
+    popular: false,
+    features: [
+      "Maten informado a tus clientes",
+      "Fideliza a los nuevos clientes",
+      "Informa de promociones directamente",
+      "Automatiza tareas recurrentes",
+      //   "Dedicated Account Manager",
+      //   "24/7 Phone Support",
+    ],
+    imgurl: travelDivingPage,
+    button: {
+      text: "Contact us",
+      link: "https://competent-austin-f96766.netlify.app/",
+    },
+  },
+  //   {
+  //     name: "Enterprise",
+  //     price: "Custom",
+  //     popular: false,
+  //     features: [
+  //       "All Pro Features",
+  //       "Unlimited Custom domains",
+  //       "99.99% Uptime SLA",
+  //       "SAML & SSO Integration",
+  //       "Dedicated Account Manager",
+  //       "24/7 Phone Support",
+  //     ],
+  //     button: {
+  //       text: "Contact us",
+  //       link: "/contact",
+  //     },
+  //   },
+];
+---
+
+<Layout title="Pricing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title"> {translateLabels("portfolio.title")}</Fragment>
+      <Fragment slot="desc">
+        {translateLabels("portfolio.description")}
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12 ml-1">
+      <!-- {pricing.map((item) => <PricingCard plan={item} />)} -->
+
+      {
+        pricing.map((item) => {
+          console.log(item.button.link);
+          return (
+            <>
+              <a
+                href={item.button.link}
+                target="_blank"
+                class="relative block w-64 h-40 overflow-hidden rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                <Picture
+                  src={item.imgurl}
+                  alt="Astronaut in the air"
+                  widths={[200, 400, 600]}
+                  sizes="(max-width: 800px) 100vw, 620px"
+                  loading="eager"
+                  format="avif"
+                  class="absolute inset-0 object-cover w-full h-full transition-opacity duration-300 ease-in-out opacity-75"
+                />
+                <div class="relative flex items-center justify-center h-full bg-black bg-opacity-50">
+                  <span class="text-white text-lg font-semibold">
+                    {" "}
+                    {translateLabels("portfolio.card.viewMore")}
+                  </span>
+                </div>
+              </a>
+            </>
+          );
+        })
+      }
+    </div>
+  </Container>
+</Layout>

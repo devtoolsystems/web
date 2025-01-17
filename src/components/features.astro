@@ -1,24 +1,29 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+import type { languageList } from "i18n/ui";
+import { useTranslations } from "i18n/utils";
+
+const currentLang = Astro.currentLocale || "es";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof languageList,
+);
 
 const features = [
   {
-    title: "Desarrollo web",
-    description:
-      "creamos un sitio web atractivo para tus clientes digitales",
+    title: translateLabels("feature.one.title"),
+    description: translateLabels("feature.one.description"),
     icon: "bx:bxs-briefcase",
   },
   {
-    title: "Marketing digital",
-    description:
-      "Tenemos planes de marketing digital que atreran posibles clientes",
+    title: translateLabels("feature.two.title"),
+    description: translateLabels("feature.two.description"),
     icon: "bx:bxs-window-alt",
   },
   {
-    title: "Chatbot de whatssapp",
-    description:
-      "Te creamos un chatbot automatizado para un servicio al cliente mas atento",
+    title:translateLabels("feature.three.title"),
+    description: translateLabels("feature.three.description")      ,
     icon: "bx:bxs-data",
   },
   // {
@@ -44,10 +49,10 @@ const features = [
 
 <div class="mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Todo lo que necesitas para tu negocio digital
+    {translateLabels("feature.title")}
   </h2>
   <p class="text-lg mt-4 text-slate-600">
-    Tenemos una serie de servicios que haran que tu negocio alcance el siguiente nivel
+    {translateLabels("feature.description")}
   </p>
 </div>
 
