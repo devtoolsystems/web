@@ -1,0 +1,37 @@
+---
+import Contactform from "@components/contactform.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import PricingCard from "@components/pricing.astro";
+import { prefixPath } from "@components/navbar/navbar.astro";
+import { useTranslations } from "i18n/utils";
+import type { languageList } from "i18n/ui";
+import { servicesPageHelper } from "helpers/servicesPageHelper";
+
+
+const currentLang = Astro.currentLocale || "es";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof languageList,
+);
+
+const pricing = servicesPageHelper({currentLang:currentLang})
+
+---
+
+<Layout title="Pricing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">{translateLabels("services.title")} </Fragment>
+      <Fragment slot="desc">
+        {translateLabels("services.description")}
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <PricingCard plan={item} />)}
+    </div>
+  </Container>
+</Layout>
