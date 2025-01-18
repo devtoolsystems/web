@@ -101,7 +101,7 @@ const pricing = [
 <Layout title="Pricing">
   <Container>
     <Sectionhead>
-      <Fragment slot="title"> {translateLabels("portfolio.title")}</Fragment>
+      <Fragment slot="title"> <h2> {translateLabels("portfolio.title")} </h2> </Fragment>
       <Fragment slot="desc">
         {translateLabels("portfolio.description")}
       </Fragment>
@@ -142,3 +142,12 @@ const pricing = [
     </div>
   </Container>
 </Layout>
+
+<style>
+  h2 {
+    font-size: 4rem;
+    font-family: Poppins;
+    font-weight: bold;
+    color: #999
+  }
+</style>
