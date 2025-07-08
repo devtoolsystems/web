@@ -7,7 +7,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://devtoolsystems.github.io",
-  base: 'web',
+  base: '/web/',
   integrations: [tailwind(), mdx(), sitemap(), icon()],
   i18n:{
     defaultLocale: 'es',
