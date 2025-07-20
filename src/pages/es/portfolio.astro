@@ -14,14 +14,15 @@ import { Picture } from "astro:assets";
 import christmasGif from "../../assets/christmasGif.png";
 import realStateLuxury from "../../assets/realStateLuxury.png";
 import coffeeBlog from "../../assets/coffeeBlog.png";
-import wheaterApp from "../../assets/wheaterApp.png"
+import wheaterApp from "../../assets/wheaterApp.png";
 import carDealer from "../../assets/carsales.png";
 import restaurant from "../../assets/restaurant.png";
+import hostelcity from "../../assets/hostelcity.png";
 
 const currentLang = Astro.currentLocale || "es";
 
 const translateLabels = useTranslations(
-  currentLang as keyof typeof languageList,
+  currentLang as keyof typeof languageList
 );
 
 const pricing = [
@@ -100,7 +101,7 @@ const pricing = [
     button: {
       text: "Contact us",
       link: "https://kind-newton-2d261f.netlify.app/",
-    },    
+    },
   },
   {
     name: "Chatbots",
@@ -118,7 +119,7 @@ const pricing = [
     button: {
       text: "Contact us",
       link: "https://zen-bhabha-038289.netlify.app/",
-    },    
+    },
   },
   {
     name: "Chatbots",
@@ -136,7 +137,7 @@ const pricing = [
     button: {
       text: "Contact us",
       link: "https://modest-lovelace-1d5055.netlify.app/",
-    },    
+    },
   },
   {
     name: "Chatbots",
@@ -154,7 +155,7 @@ const pricing = [
     button: {
       text: "Contact us",
       link: "https://gifted-edison-b49129.netlify.app/",
-    },    
+    },
   },
   {
     name: "Chatbots",
@@ -172,7 +173,7 @@ const pricing = [
     button: {
       text: "Contact us",
       link: "https://stunning-valkyrie-c4ef5f.netlify.app/es/",
-    },    
+    },
   },
   {
     name: "Chatbots",
@@ -190,16 +191,35 @@ const pricing = [
     button: {
       text: "Contact us",
       link: "https://leafy-bublanina-c73ba2.netlify.app/es/",
-    },    
+    },
   },
-
+  {
+    name: "Chatbots",
+    //price: "Custom",
+    popular: false,
+    features: [
+      "Maten informado a tus clientes",
+      "Fideliza a los nuevos clientes",
+      "Informa de promociones directamente",
+      "Automatiza tareas recurrentes",
+      //   "Dedicated Account Manager",
+      //   "24/7 Phone Support",
+    ],
+    imgurl: hostelcity,
+    button: {
+      text: "Contact us",
+      link: "https://superb-lily-68fa13.netlify.app/es/",
+    },
+  },
 ];
 ---
 
 <Layout title="Pricing">
   <Container>
     <Sectionhead>
-      <Fragment slot="title"> <h2> {translateLabels("portfolio.title")} </h2> </Fragment>
+      <Fragment slot="title">
+        <h2>{translateLabels("portfolio.title")}</h2>
+      </Fragment>
       <Fragment slot="desc">
         {translateLabels("portfolio.description")}
       </Fragment>
@@ -246,6 +266,6 @@ const pricing = [
     font-size: 4rem;
     font-family: Poppins;
     font-weight: bold;
-    color: #999
+    color: #999;
   }
 </style>
