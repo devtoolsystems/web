@@ -23,11 +23,6 @@ console.log('getRelativeLocaleUrl(currentLang):', getRelativeLocaleUrl(currentLa
 const currentPath = Astro.url;
 console.log('currentPath:---------------',currentPath.pathname);
 
-if (currentPath.pathname.includes('services')){
-  console.log('estamos en los servicios')
-}
-
-const hideNavbar = currentPath.pathname.includes('magnet') || currentPath.pathname.includes('sales') ? true : false
 
 const menuitems = [
   // {

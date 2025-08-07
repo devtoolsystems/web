@@ -27,6 +27,8 @@ const makeTitle = title
   : "DevtoolSystems - make your business better";
 
   const currentLang = Astro.currentLocale || 'es'
+const currentPath = Astro.url;
+  const showNavbarAndFooter = currentPath.pathname.includes('magnet') || currentPath.pathname.includes('sales') ? true : false
  
 ---
 
@@ -62,9 +64,11 @@ const makeTitle = title
     />
   </head>
   <body>
-    <Navbar />
+    {!showNavbarAndFooter ? <Navbar /> : <></>}
+    
     <slot />
-    <Footer />
+    {!showNavbarAndFooter ?  <Footer /> : <></>}
+   
     <style is:global>
       
       /* importacion de la tipografia poppins desde google fonts */
