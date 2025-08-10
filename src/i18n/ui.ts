@@ -3,6 +3,31 @@ export const languageList = {
     en: "English"
 }
 
+const sloganDescription = `
+<p class="text-lg leading-relaxed text-slate-500">En Devtool systems somos más que un equipo de desarrolladores: somos tu socio tecnológico. Un grupo de jóvenes con amplia experiencia en desarrollo web que decidió unir fuerzas para ofrecer en Nicaragua servicios digitales con calidad internacional.</p></br>
+
+<p class="text-lg leading-relaxed text-slate-500"> Nuestra misión es clara: dar mayor valor agregado a los negocios nicaragüenses, impulsando su crecimiento y competitividad en el mercado digital.</p></br>
+
+<p class="text-lg leading-relaxed text-slate-500"> Sabemos que tu negocio es único, y por eso creamos soluciones a la medida que combinan innovación, funcionalidad y diseño atractivo. Nuestro objetivo no es solo entregarte un producto, sino ayudarte a <b>vender más</b>, <b>destacar más</b> y <b>llegar más lejos</b>.</p></br>
+
+<p class="text-xl leading-relaxed text-slate-500 font-bold"> Beneficios de trabajar con nosotros:</p></br>
+<ul>
+    <li><p class="text-lg leading-relaxed text-slate-500"><b>Calidad internacional</b> para competir sin límites.</p></li>
+    <li><p class="text-lg leading-relaxed text-slate-500"><b>Diseños estratégicos</b> que convierten visitantes en clientes.<p class="text-lg leading-relaxed text-slate-500"></p></li>
+    <li><p class="text-lg leading-relaxed text-slate-500"><b>Soporte cercano y confiable</b> para que nunca te sientas solo.</p></li>
+    <li><p class="text-lg leading-relaxed text-slate-500"><b>Optimización y velocidad</b> para un rendimiento impecable.</p></li>
+    <li><p class="text-lg leading-relaxed text-slate-500"><b>Soluciones escalables</b> que crecen junto a tu negocio.</p></li>
+</ul>
+</br>
+<p class="text-lg leading-relaxed text-slate-500">En cada proyecto ponemos nuestra experiencia, creatividad y compromiso para que tu inversión genere resultados reales.</p>
+<p class="text-lg leading-relaxed text-slate-500 font-bold">Porque en el mundo digital, no necesitas solo un proveedor… necesitas un aliado.</p>
+`
+
+const aboutDescription = `
+En  Devtool systems transformamos ideas en soluciones web con calidad internacional. Ayudamos a los negocios nicaragüenses a crecer, vender más y destacar en el mercado digital, ofreciendo innovación, diseño estratégico y soporte cercano.
+No somos solo desarrolladores, somos el aliado que impulsa tu éxito.
+`
+
 export const labels = {
     es: {
         "nav.home": "Inicio",
@@ -12,10 +37,10 @@ export const labels = {
         "nav.about": "Sobre nosotros",
         "nav.about.title": "Sobre nosotros",
         "home.title": "Bienvenidos a Programación en español",
-        "about.title": "Sobre nosotros",
-        "about.description": "Somos un equipo apasionado",
+        "about.title": "Tu Socio Tecnológico en el Mundo Digital",
+        "about.description": aboutDescription,
         "about.slogan": "Convirtiendo tus ideas en realidad",
-        "about.slogan.description": "Somos un equipo multidisciplinario que trae diferentes experiencias y habilidades con calidad a los proyectos",
+        "about.slogan.description": sloganDescription,
         "hero.title": "Desarrollo web",
         "hero.description": "El mejor socio tecnológico que busca un mejor futuro para tu negocio",
         "feature.title": "Todo lo que necesitas para tu negocio digital",
@@ -52,17 +77,17 @@ export const labels = {
         "portfolio.card.viewMore": "Ver más",
         "contact.title": "Contacto",
         "contact.description": "Estamos aquí para ayudarte",
-        "contact.seccion.title" : "Contacto a DevtoolSystems",
-        "contact.seccion.text" : "¿Tienes algo que decirnos? Estamos aquí para ayudarte, rellena el formulario o envía un email, esteremos feliz de saber de ti",
-        "components.contactform.name.placeholder" : "Nombre completo",
-        "components.contactform.name.feedBack" : "Por favor agregue su nombre completo",
-        "components.contactform.email.title" : "Dirección de correo electrónico",
-        "components.contactform.email.placeholder" : "Correo electrónico",
-        "components.contactform.email.feedBackEmpty" : "Por favor agregue su correo electrónico",
-        "components.contactform.email.feedBackInvalid" : "Por favor agregue un correo electrónico válido",
-        "components.contactform.message.placeholder" : "Tu mensaje",
-        "components.contactform.message.feedBackInvalid" : "Por favor agregue su mensaje",
-        "components.contactform.button.submit" : "Enviar mensaje",
+        "contact.seccion.title": "Contacto a DevtoolSystems",
+        "contact.seccion.text": "¿Tienes algo que decirnos? Estamos aquí para ayudarte, rellena el formulario o envía un email, esteremos feliz de saber de ti",
+        "components.contactform.name.placeholder": "Nombre completo",
+        "components.contactform.name.feedBack": "Por favor agregue su nombre completo",
+        "components.contactform.email.title": "Dirección de correo electrónico",
+        "components.contactform.email.placeholder": "Correo electrónico",
+        "components.contactform.email.feedBackEmpty": "Por favor agregue su correo electrónico",
+        "components.contactform.email.feedBackInvalid": "Por favor agregue un correo electrónico válido",
+        "components.contactform.message.placeholder": "Tu mensaje",
+        "components.contactform.message.feedBackInvalid": "Por favor agregue su mensaje",
+        "components.contactform.button.submit": "Enviar mensaje",
     },
     en: {
         "nav.home": "Home",
@@ -112,16 +137,16 @@ export const labels = {
         "portfolio.card.viewMore": "View more",
         "contact.title": "Contact",
         "contact.description": "We are here to help you",
-        "contact.seccion.title" : "Contact DevtoolSystems",
-        "contact.seccion.text" : "Do you have something to tell us? We are here to help you, fill out the form or send us an email, we will be happy to hear from you.",       
-        "components.contactform.name.placeholder" : "Full name",
-        "components.contactform.name.feedBack" : " Please add your full name",
-        "components.contactform.email.title" : "Email Address",
-        "components.contactform.email.placeholder" : "email address",
-        "components.contactform.email.feedBackEmpty" : "Please add your email address.",
-        "components.contactform.email.feedBackInvalid" : "Please add a valid email address.",
-        "components.contactform.message.placeholder" : "Your message",
-        "components.contactform.message.feedBackInvalid" : "Please add your message",
-        "components.contactform.button.submit" : "Send message",
+        "contact.seccion.title": "Contact DevtoolSystems",
+        "contact.seccion.text": "Do you have something to tell us? We are here to help you, fill out the form or send us an email, we will be happy to hear from you.",
+        "components.contactform.name.placeholder": "Full name",
+        "components.contactform.name.feedBack": " Please add your full name",
+        "components.contactform.email.title": "Email Address",
+        "components.contactform.email.placeholder": "email address",
+        "components.contactform.email.feedBackEmpty": "Please add your email address.",
+        "components.contactform.email.feedBackInvalid": "Please add a valid email address.",
+        "components.contactform.message.placeholder": "Your message",
+        "components.contactform.message.feedBackInvalid": "Please add your message",
+        "components.contactform.button.submit": "Send message",
     },
 };
