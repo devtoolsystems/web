@@ -6,6 +6,8 @@ import "@fontsource-variable/inter/index.css";
 import '@fontsource-variable/bricolage-grotesque';
 import { useTranslations } from "i18n/utils";
 import type { languageList } from "i18n/ui";
+import { ViewTransitions } from "astro:transitions";
+
 
 
 
@@ -62,6 +64,7 @@ const currentPath = Astro.url;
         },
       }}
     />
+    <ViewTransitions />
   </head>
   <body>
     {!showNavbarAndFooter ? <Navbar /> : <></>}
